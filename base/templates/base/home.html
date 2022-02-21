@@ -15,11 +15,11 @@
     <div>
         {% include 'base/topics_component.html' %}
     </div>
-    
+
     <div>
         <h5>{{room_count}} requests remaining</h5>
         <a href="{% url 'create-room'  %}">Make request</a>
-        
+
         {% include 'base/feed_component.html' %}
     </div>
     <div>
