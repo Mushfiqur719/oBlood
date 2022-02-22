@@ -121,7 +121,9 @@ def updateRoom(request,pk):
     if request.method == 'POST':
         form = RoomForm(request.POST,instance = room)
         if form.is_valid():
-            form.save()
+            room = form.save(commit=False)
+            room.host = request.user
+            room.save()
             return redirect('home')
 
     context = {'form':form}
