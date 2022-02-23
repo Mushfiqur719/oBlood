@@ -16,6 +16,7 @@
           <input name="q" placeholder="Search for rooms..." />
         </label>
       </form>
+
       <nav class="header__menu">
       <!--logged In-->
       {% if request.user.is_authenticated %}
@@ -34,6 +35,7 @@
             </svg>
           </button>
         </div>
+        
         {% else %}
         <!-- Not Logged In -->
         <a href="{% url 'login' %}">
