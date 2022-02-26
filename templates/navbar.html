@@ -22,7 +22,7 @@
       {% if request.user.is_authenticated %}
       
         <div class="header__user">
-          <a href="profile.html">
+          <a href="{% url 'update-user' %}">
             <div class="avatar avatar--medium active">
               <img src="https://scontent.fdac99-1.fna.fbcdn.net/v/t39.30808-6/268797424_1817561838432912_2118530761389204513_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=174925&_nc_eui2=AeHk8iBZ-iXKoHh6N0h4WGU6SMQ8bY1jp7pIxDxtjWOnug21L3BoCYh_trcAF2UzigJzSC6UjzsGA1Ne5sjOY2dm&_nc_ohc=cOZFZFqSy_0AX8lwrfd&_nc_ht=scontent.fdac99-1.fna&oh=00_AT83MzqgKWuXIunN1xyx1V6-LHpdD6OUgl9UYDUoynELxA&oe=621AEB9D" />
             </div>
@@ -46,7 +46,7 @@
         {% endif %}
     
         <div class="dropdown-menu">
-          <a href="settings.html" class="dropdown-link"
+          <a href="{% url 'update-user' %}" class="dropdown-link"
             ><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <title>tools</title>
               <path
