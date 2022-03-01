@@ -16,7 +16,7 @@
                   ></path>
                 </svg>
               </a>
-              <h3>Study Room</h3>
+              <h3>Message Portal</h3>
             </div>
 
             {% if room.host == request.user %}
@@ -67,7 +67,7 @@
                 <span>{{room.created|timesince}}</span>
               </div>
               <div class="room__hosted">
-                <p>Hosted By</p>
+                <p>Requested By</p>
                 <a href="{% url 'profile' room.host.id %}" class="room__author">
                   <div class="avatar avatar--small">
                     <img src="https://randomuser.me/api/portraits/men/37.jpg" />
@@ -132,7 +132,7 @@
 
         <!--   Start -->
         <div class="participants">
-          <h3 class="participants__top">Participants <span>({{participants.count}} Joined)</span></h3>
+          <h3 class="participants__top">Volunteers <span>({{participants.count}} Joined)</span></h3>
           <div class="participants__list scroll">
             
             {% for user in participants %}
