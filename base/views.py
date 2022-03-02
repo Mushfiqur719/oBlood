@@ -110,6 +110,8 @@ def createRoom(request):
             host = request.user,
             topic = topic,
             name = request.POST.get('name'),
+            cause = request.POST.get('cause'),
+            location = request.POST.get('location'),
             description = request.POST.get('description'),
         )
         return redirect('home')
@@ -131,6 +133,8 @@ def updateRoom(request,pk):
         topic, created = Topic.objects.get_or_create(name=topic_name)
         room.name = request.POST.get('name')
         room.topic = topic
+        room.cause = request.POST.get('cause'),
+        room.location = request.POST.get('location'),
         room.description = request.POST.get('description')
         room.save()
         return redirect('home')

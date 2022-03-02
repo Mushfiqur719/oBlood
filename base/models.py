@@ -10,6 +10,8 @@ class Topic(models.Model):
         return self.name
 class Room(models.Model):
     name = models.CharField(max_length=200)
+    cause = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
     host = models.ForeignKey(User, on_delete=models.SET_NULL,null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL,null=True)
     description = models.TextField(null=True,blank=True)

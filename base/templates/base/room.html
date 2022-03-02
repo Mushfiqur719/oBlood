@@ -64,7 +64,15 @@
             <div class="room__header scroll">
               <div class="room__info">
                 <h3>{{room.name}}</h3>
+                
                 <span>{{room.created|timesince}}</span>
+                
+              </div>
+              <div>
+                <h5>Cause: {{room.cause}}</h5>
+                <h5>Location: {{room.location}}</h5>
+                <br>
+                <h5>Description: {{room.description}}</h5>
               </div>
               <div class="room__hosted">
                 <p>Requested By</p>
