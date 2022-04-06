@@ -4,7 +4,7 @@
         <div class="roomListRoom__header">
         <a href="{% url 'profile' room.host.id %}" class="roomListRoom__author">
             <div class="avatar avatar--small">
-            <img src="https://scontent.fdac99-1.fna.fbcdn.net/v/t39.30808-6/245608082_4503799639712040_3606634654022375203_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeGQHoJBLwxx-kcZErSj1sy3if3t2wf4vyeJ_e3bB_i_JzaoT-J57wpjL_JoW0z5fCMfjven3426QhWeMjFZxk4E&_nc_ohc=a7McwKpvSpkAX8s5K1J&_nc_ht=scontent.fdac99-1.fna&oh=00_AT_5x_UljOwjsr5npRAlW_h9bNvQmIZiDufXnLPE3DrxHw&oe=6219217B" />
+            <img src="{{room.host.avatar.url}}" />
             </div>
             <span>@{{room.host.username}}</span>
         </a>
