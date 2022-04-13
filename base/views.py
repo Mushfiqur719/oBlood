@@ -52,6 +52,9 @@ def registerPage(request):
 
 
 def home(request):
+    return render(request, 'base/home.html')
+
+def feed(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
     rooms = Room.objects.filter(
@@ -67,8 +70,7 @@ def home(request):
     context = {'rooms': rooms, 'topics':topics,
     'room_count': room_count,'room_messages':room_messages}
     
-    return render(request, 'base/home.html',context)
-
+    return render(request, 'base/feed.html',context)
 
 def room(request,pk):
     room = Room.objects.get(id=pk)
