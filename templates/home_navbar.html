@@ -1,0 +1,61 @@
+{% load static %}
+<header class="header header--loggedIn">
+    <div class="container">
+      
+        <a href="{% url 'home' %}" class="header__logo">
+        <img src="{% static 'images/logo.png' %}" />
+        <h1>OBlood-Online Care For Blood Donation</h1>
+      </a>
+
+      <nav class="header__menu">
+      <!--logged In-->
+      <div>
+        <a href="{% url 'volunteer' %}">Volunteers</a>    
+      </div>
+
+      <div>
+        <a href="{% url 'volunteer' %}">Live Feed</a>    
+      </div>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="{% url 'volunteer' %}">Volunteers<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="{% url 'feed' %}">Live Feeds<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="{% url 'volunteer' %}">Contests<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="{% url 'feed' %}">Tutorials<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        {% comment %} {% if user.is_authenticated %}
+        <ul class="navbar-nav mr-4 mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{% url 'profile' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-light nav-link text-dark" href="{% url 'logout' %}">logout</a>
+          </li>
+        </ul>
+        {% else %}
+        <ul class="navbar-nav mr-4 mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="btn btn-light nav-link text-dark" href="{% url 'register'%}">Create Account</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="btn btn-light nav-link text-dark" href="{% url 'login'%}">Sign in</a>
+          </li>
+        </ul>
+        {% endif %} {% endcomment %}
+      </div>
+      
+      </nav>
+    </div>
+  </header>
+

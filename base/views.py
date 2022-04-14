@@ -54,6 +54,9 @@ def registerPage(request):
 def home(request):
     return render(request, 'base/home.html')
 
+def volunteer(request):
+    return render(request, 'base/volunteer.html')
+
 def feed(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
