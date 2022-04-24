@@ -16,4 +16,6 @@ class RoomForm(ModelForm):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['avatar','name','username','email','bio']
+        fields = ['avatar','name','username','email','bio',
+        'blood','age','gender','height','cellphone','address',
+        'occupation','blood_given','frequency','smoke','report']

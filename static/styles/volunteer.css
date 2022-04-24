@@ -1,0 +1,104 @@
+ body{
+   background-color: #2d2d39;
+ }
+ .dropbtn {
+    background-color: #fff;
+    color: black;
+    border-radius: 15%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(6, 197, 255);
+    color:black;
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+    position: relative;
+    left:35%;
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;} 
+
+  .card{
+  position:relative;
+  left: 15%;
+  border-radius: 20px;
+  display: inline-block;
+  margin:20px 20px;
+  box-shadow: rgba(175, 175, 175, 0.2) 0px 7px 29px 0px;
+
+}
+
+.card img{
+  position: relative;
+  left:28%;
+  border-radius: 50%;
+  width:45%;
+  height:40%;
+  margin-top: 15%;
+}
+.card-body{
+  text-align: center;
+  /* padding: 100px 0px; */
+}
+.card-title{
+  margin-top: 20px;
+  padding-left: 5%;
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
+
+.card-body a{
+  text-decoration: none;
+  color:black;
+}
+.bloodgroup{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0%;
+}
+
+.container {
+  max-width: 120rem;
+  width: 90%;
+  margin: auto;
+}
+

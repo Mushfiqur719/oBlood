@@ -7,8 +7,14 @@
       {% include 'base/topics_component.html' %}
       <!-- Topics End -->
 
+      
+
       <!-- Room List Start -->
       <div class="roomList">
+
+
+
+
         <div class="profile">
           <div class="profile__avatar">
             <div class="avatar avatar--large active">
@@ -16,10 +22,11 @@
             </div>
           </div>
           <div class="profile__info">
-            <h3>{{user.username}}</h3>
+            <h3>{{user.name }}</h3>
             <p>@{{user.username}}</p>
             {% if request.user == user %}
             <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+            
             {% endif %}
           </div>
           <div class="profile__about">
@@ -27,6 +34,32 @@
             <p>{{user.bio}}</p>
           </div>
         </div>
+
+        <div>
+          <div class="roomListRoom">
+
+            <div class="roomListRoom__header">
+              <h1>User Detailed Info</h1>
+            </div>
+            
+            <div class="roomListRoom__content">
+              <p>Mail: {{user.email}}</p>
+              <p>Blood Group: {{user.blood}}</p>
+              <p>Age: {{user.age}}</p>
+              <p>Gender: {{user.gender}}</p>
+              <p>Height: {{user.height}}</p>
+              <p>Cellphone: {{user.cellphone}}</p>
+              <p>Address: {{user.address}}</p>
+              <p>Occupation: {{user.occupation}}</p>
+              <p>Have you ever Donated Blood?: {{user.blood_given}}</p>
+              <p>How often do you give blood: {{user.frequency}}</p>
+              <p>Do you smoke?: {{user.smoke}}</p>
+              <p>User blood report:{{user.report}}</p>
+            </div>
+          </div>
+        </div>
+
+        
 
         <div class="roomList__header">
           <div>

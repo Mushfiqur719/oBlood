@@ -5,7 +5,7 @@
         <img src="{% static 'images/logo.png' %}" />
         <h1>OBlood-Online Care For Blood Donation</h1>
       </a>
-      <form class="header__search" method="GET" action="{% url 'home' %}">
+      <form class="header__search" method="GET" action="{% url 'feed' %}">
         <label>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
             <title>search</title>
@@ -72,12 +72,5 @@
     </div>
   </header>
 
-<!--
-{% if request.user.is_authenticated %}
-    <h3>Welcome {{ request.user }}</h3>
-    <a href="{% url 'logout' %}"> Logout </a>
-{% else %}
-    <a href="{% url 'login' %}">Login</a>
-{% endif %}
--->
+
 

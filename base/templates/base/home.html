@@ -24,12 +24,12 @@
 <body>
   <!-- Navbar & Background starts -->
   <div class="backgroundimage">
-    <nav class="navbar navbar-expand-lg navbar-light navbar-default navbar fixed-top navbar-fixed-top">
-      <div class="container-fluid">
-        <a href="#" class="navbar-brand">
+    <na class="navbar navbar-expand-lg navbar-light navbar-default navbar fixed-top navbar-fixed-top">
+      <div class="container">
+        <a href="{% url 'home' %}" class="navbar-brand">
           <img src="{% static 'images/logo.png' %}" height="50" alt="Oblood logo">
         </a>
-        <a href="#" class="navbar-brand iconclass">
+        <a href="{% url 'home' %}" class="navbar-brand iconclass">
           <p class="icons" style="display:inline;font-weight: 300;"><em>OBlood-Online Care</em></p>
           <p class="icons" style="font-weight: 300;"><em>For Blood Donation</em></p>
         </a>
@@ -40,7 +40,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="#">Volunteer</a>
+              <a class="nav-link active text-light" aria-current="page" href="{% url 'feed' %}">Live Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light" aria-current="page" href="{% url 'volunteer' %}">Volunteer</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Donate
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Donate Blood</a></li>
+                <li><a class="dropdown-item" href="#">Donate Fund</a></li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
@@ -55,18 +68,7 @@
                 <li><a class="dropdown-item" href="#">Lions Club Blood Bank</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Emergency Contacts
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Emergency Consultant</a></li>
-                <li><a class="dropdown-item" href="#">Ambulance Service</a></li>
-                <li><a class="dropdown-item" href="#">Bangladesh Children & Women Consultation Center</a></li>
-                <li><a class="dropdown-item" href="#">Information Center Bangladesh</a></li>
-              </ul>
-            </li>
+            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,13 +82,24 @@
               </ul>
             </li>
           </ul>
-          <div class="navbar-nav ms-auto">
+
+          
+            {% if request.user.is_autheticated %}
+            <div class="navbar-nav ms-auto">  
             <button type="button" class="btn btn-outline-lite  loginbutton"><a style="text-decoration:none;color:black;"
-                href="login.html">Dashboard</a></button>
+                href="{% url 'login' %}">Login</a>
+              </button>
+            </div>
+            {% else %}
+            <div class="navbar-nav ms-auto">
+              <button type="button" class="btn btn-outline-lite  loginbutton"><a style="text-decoration:none;color:black;"
+                href="{% url 'logout' %}">Logout</a>
+              </button>
+            {% endif %}
           </div>
         </div>
       </div>
-    </nav>
+    </na>
     </div>
   </div>
   <!-- end of Navbar & background -->

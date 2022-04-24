@@ -55,7 +55,9 @@ def home(request):
     return render(request, 'base/home.html')
 
 def volunteer(request):
-    return render(request, 'base/volunteer.html')
+    user = User.objects.all()
+    context = {'user' : user}
+    return render(request, 'base/volunteer.html',context)
 
 def feed(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
@@ -118,7 +120,7 @@ def createRoom(request):
             location = request.POST.get('location'),
             description = request.POST.get('description'),
         )
-        return redirect('home')
+        return redirect('feed')
 
     context = {'form':form,'topics':topics}
     return render(request, 'base/room_form.html',context)
@@ -141,7 +143,7 @@ def updateRoom(request,pk):
         room.location = request.POST.get('location'),
         room.description = request.POST.get('description')
         room.save()
-        return redirect('home')
+        return redirect('feed')
 
     context = {'form':form,'topics':topics}
     return render(request, 'base/room_form.html',context)
