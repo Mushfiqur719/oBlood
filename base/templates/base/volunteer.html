@@ -1,24 +1,48 @@
+
+
 {% extends 'main.html' %}
 
 {% block content %}
 
-<main class="profile-page layout layout--2">
-  <div class="container">  
-  
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="volunteer.css">
+    <title>Volunteer</title>
+</head>
+<body style="background-color: #2D2D39;">
+  {% load static %}
+
   {% for users in user %}
 
-  <div>
+  <!-- <div>
     <div class="roomListRoom">
       <div class="roomListRoom__header">
-
+        
       </div>
       <div class="roomListRoom__content">
       
       </div>
       
   </div>
-  {% endfor %}
+  
+</div> -->
+<div class="card" style="width: 18rem; display: inline-flex; margin: 50px 50px;">
+  <img src=" {{users.avatar.url}}" class="card-img-top" alt="profile Photo">
+  <div class="card-body" style="text-align: center;">
+    <h5 class="card-title"><a style="text-decoration: none; color:black" href="#">{{users.username}}</h5>
+    <p class="card-text bloodgroup"><i class="fa-solid fa-droplet"></i><a style="text-decoration: none; color:black" href="#">{{users.blood}}</a></p> 
+    <p><i class="fa-solid fa-location-dot"></i><a style="text-decoration: none; color:black" href="{% url 'profile' users.id %}">{{users.address}}</a></p>
+    <a href="{% url 'profile' users.id %}" class="btn btn-primary">View Profile</a>
+  </div>
 </div>
+{% endfor %}
 
 </main>
 

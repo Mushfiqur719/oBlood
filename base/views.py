@@ -34,7 +34,7 @@ def loginPage(request):
 
 def logoutPage(request):
     logout(request)
-    return redirect('home')
+    return redirect('feed')
 
 def registerPage(request):
     form = MyUserCreationForm()
